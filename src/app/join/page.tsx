@@ -27,7 +27,7 @@ export default function JoinQuiz(): JSX.Element {
 
     // クイズIDの検証とゲーム画面への遷移
     // 実際のアプリでは、ここでクイズIDの有効性を確認する処理を追加
-    router.push(`/game/${formState.quizId}`);
+    router.push(`/room/${formState.quizId}`);
   };
 
   const handleQuizIdChange = (e: ChangeEvent<HTMLInputElement>): void => {
