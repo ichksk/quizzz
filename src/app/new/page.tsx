@@ -1,5 +1,6 @@
 "use client"
 
+import { createRoom } from '@/api/createRoom';
 import { ChangeEvent, useState } from 'react';
 
 export default function CreateQuizPage() {
@@ -15,6 +16,7 @@ export default function CreateQuizPage() {
       };
       reader.readAsDataURL(file);
     }
+    createRoom()
   };
 
   return (
