@@ -8,7 +8,7 @@ interface FormState {
   error: string;
 }
 
-export default function JoinQuiz(): JSX.Element {
+export default function JoinQuizPage(): JSX.Element {
   const router = useRouter();
   const [formState, setFormState] = useState<FormState>({
     quizId: '',

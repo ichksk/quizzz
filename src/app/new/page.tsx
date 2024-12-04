@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { ChangeEvent, useState } from 'react';
 
-export default function CreateQuiz() {
+export default function CreateQuizPage() {
   const [imagePreview, setImagePreview] = useState('');
 
   const handleImageChange = (e: ChangeEvent<HTMLInputElement>): void => {
