@@ -1,18 +1,18 @@
 "use client"
 
-import { useState } from 'react';
+import Image from 'next/image';
+import { ChangeEvent, useState } from 'react';
 
 export default function CreateQuiz() {
   const [imagePreview, setImagePreview] = useState('');
 
-  const handleImageChange = (e: any) => {
-    const file = e.target.files[0];
+  const handleImageChange = (e: ChangeEvent<HTMLInputElement>): void => {
+    const file = e.target.files?.[0];
     if (file && file.type.startsWith('image/')) {
       const reader = new FileReader();
       reader.onloadend = () => {
-        if(typeof reader.result === "string") {
-          setImagePreview(reader.result);
-        }
+        const result = reader.result as string;
+        setImagePreview(result);
       };
       reader.readAsDataURL(file);
     }
@@ -78,7 +78,7 @@ export default function CreateQuiz() {
             {/* 画像プレビュー */}
             {imagePreview && (
               <div className="mt-4">
-                <img
+                <Image
                   src={imagePreview}
                   alt="アップロードした画像のプレビュー"
                   className="max-w-full h-auto max-h-64 rounded-lg mx-auto"
