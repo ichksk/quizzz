@@ -1,6 +1,5 @@
 "use client"
 
-import Image from 'next/image';
 import { ChangeEvent, useState } from 'react';
 
 export default function CreateQuizPage() {
@@ -78,7 +77,7 @@ export default function CreateQuizPage() {
             {/* 画像プレビュー */}
             {imagePreview && (
               <div className="mt-4">
-                <Image
+                <img
                   src={imagePreview}
                   alt="アップロードした画像のプレビュー"
                   className="max-w-full h-auto max-h-64 rounded-lg mx-auto"
