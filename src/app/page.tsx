@@ -1,5 +1,6 @@
 "use client"
 
+import { QuestionField } from '@/components/questionField';
 import { useRouter } from 'next/navigation';
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <div className="flex flex-col gap-6 items-center">
           <h1 className="text-3xl font-bold text-center mb-8">クイズアプリへようこそ！</h1>
+          <QuestionField/>
           <div className="flex flex-col sm:flex-row gap-4">
             <button
               className="px-8 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 min-w-[200px] font-medium"
