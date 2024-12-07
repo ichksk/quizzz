@@ -2,7 +2,8 @@
 
 import { createRoom } from '@/api/createRoom';
 import { QuestionField } from '@/components/questionField';
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
+import toast from 'react-hot-toast';
 
 export default function CreateQuizPage() {
   const [imagePreview, setImagePreview] = useState('');
@@ -17,14 +18,19 @@ export default function CreateQuizPage() {
       };
       reader.readAsDataURL(file);
     }
-    createRoom()
   };
+
+  useEffect(() => {
+    createRoom()
+    .then(() => {
+      toast.success("ルームを作成しました！",)
+    })
+  }, [])
 
   return (
     <div className="min-h-screen p-8 pb-20 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="max-w-2xl mx-auto">
         <h1 className="text-2xl font-bold mb-8">クイズを作成</h1>
-
         <form className="space-y-6">
           {/* 問題文入力 */}
           <div className="space-y-2">
